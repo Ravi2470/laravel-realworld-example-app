@@ -6,10 +6,7 @@ services:
       context: ../
       dockerfile: Dockerfile
     image: php-laravel  
-    working_dir: /var/www/
-    ports: 
-      - 8000
-    command: bash -c "php artisan key:generate && php artisan jwt:secret && sleep 10  && php artisan migrate && php artisan db:seed &&  php artisan serve --host=0.0.0.0"
+    working_dir: /var/www
     volumes:
       - ../:/var/www
     depends_on:
